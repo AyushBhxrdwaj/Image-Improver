@@ -1,7 +1,8 @@
 
 import axios from 'axios'
-const key = import.meta.env.API_KEY
+const key = import.meta.env.VITE_API_KEY
 const base_Url="https://techhk.aoscdn.com/"
+console.log(key)
 
 export const enhancedImageAPI = async (file)=>{
     try {
@@ -9,10 +10,9 @@ export const enhancedImageAPI = async (file)=>{
         console.log("Img Uploaded")
         // /api/tasks/visual/scale/{task_id} --get
         
-        const enhancedData = await fetchImg(taskID);
-        console.log("Enhanced data" , enhancedData)
+        const enhancedData = await pollEnhancedImg(taskID);
 
-        // return enhancedData
+        return enhancedData
         
     } catch (err) {
         console.log(err.message)
@@ -52,9 +52,9 @@ const fetchImg = async (taskID)=>{
 
 }
 
-const poolEnhancedImg = async (taskID,retries=0)=>{
+const pollEnhancedImg = async (taskID,retries=0)=>{
     const result = await fetchImg(taskID);
-    if(result.status===4){
+    if(result.state===4){
         console.log("Processing...")
 
     if(retries>=20){
@@ -62,6 +62,7 @@ const poolEnhancedImg = async (taskID,retries=0)=>{
     }
     await new Promise((resolve)=>setTimeout(resolve,2000))
 
-    return poolEnhancedImg(taskID,retries+1)
+    return pollEnhancedImg(taskID,retries+1)
     }
+    return result
 }

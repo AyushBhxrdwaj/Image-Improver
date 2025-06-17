@@ -17,7 +17,7 @@ const Preview = (props) => {
       <div className='bg-white shadow-lg rounded-xl overflow-hidden'>
         <h2 className='text-xl font-semibold text-center bg-blue-900 text-white py-2 px-3'>Enhanced Image</h2>
         
-        {props.enhanced && !props.loading && (<img className='w-full h-full object-cover' src="" alt="" />)}
+        {props.enhanced && !props.loading && (<img className='w-full h-full object-cover' src={props.enhanced} alt="" />)}
         
         
         {props.loading?<Load/>:(

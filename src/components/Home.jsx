@@ -28,7 +28,7 @@ const Home = () => {
         <>
 
             <Upload uploadImageHandler={uploadImageHandler} />
-            <Preview loading={loading} uploaded={uploadImg} enhanced={enhancedImg} />
+            <Preview loading={loading} uploaded={uploadImg} enhanced={enhancedImg?.image} />
         </>
     )
 }
