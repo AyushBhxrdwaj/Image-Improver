@@ -56,7 +56,7 @@ Follow these instructions to set up and run a local copy of the project.
     Create a new file named `.env` in the root of your project.
 
     > **Important Note on API Key:**
-    > This project uses the **PickWish API**, which operates on a credit-based system. Each image enhancement consumes credits from the account associated with the API key. To run this project, you **must** obtain your own API Access Token from [PickWish](https://www.pickwish.com/api-pricing) and add it to your environment.
+    > This project uses the **PicWish API**, which operates on a credit-based system. Each image enhancement consumes credits from the account associated with the API key. To run this project, you **must** obtain your own API Access Token from [PicWish](https://picwish.com/photo-enhancer-api) and add it to your environment.
 
     Open the `.env` file and add your API token like this:
     ```env
