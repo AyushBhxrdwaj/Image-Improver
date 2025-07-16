@@ -26,7 +26,7 @@ AI Image Enhancer is a web-based tool that uses AI to upscale and enhance low-re
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/yourusername/ai-image-enhancer.git
+git clone https://github.com/AyushBhxrdwaj/ai-image-enhancer.git
 cd ai-image-enhancer
 npm install
 npm run dev
